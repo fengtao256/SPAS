@@ -15,9 +15,9 @@ public class Course {
     @Column(nullable = false)
     private String courseName ;
     @Column(nullable = false)
-    private String creditHour ;
+    private Integer creditHour ;
     @Column(nullable = false)
-    private String courseHour ;
+    private Integer courseHour ;
 
     public String getCourseNo() {
         return courseNo;
@@ -35,19 +35,19 @@ public class Course {
         this.courseName = courseName;
     }
 
-    public String getCreditHour() {
+    public Integer getCreditHour() {
         return creditHour;
     }
 
-    public void setCreditHour(String creditHour) {
+    public void setCreditHour(Integer creditHour) {
         this.creditHour = creditHour;
     }
 
-    public String getCourseHour() {
+    public Integer getCourseHour() {
         return courseHour;
     }
 
-    public void setCourseHour(String courseHour) {
+    public void setCourseHour(Integer courseHour) {
         this.courseHour = courseHour;
     }
 }
