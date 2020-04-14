@@ -41,6 +41,16 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!--以下为添加的依赖,整合Mysql和java持久化框架JPA-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
