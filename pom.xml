@@ -41,6 +41,12 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!-- 引入thymeleaf模板引擎的依赖包. -->
+        <dependency>
+            <groupId>org.springframework.boot </groupId>
+            <artifactId>spring-boot-starter-thymeleaf </artifactId>
+
+        </dependency>
         <!--以下为添加的依赖,整合Mysql和java持久化框架JPA-->
         <dependency>
             <groupId>mysql</groupId>

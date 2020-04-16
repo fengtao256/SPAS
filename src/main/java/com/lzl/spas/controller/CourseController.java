@@ -12,15 +12,19 @@ public class CourseController {
     @Autowired
     private CourseServiceInterface courseServiceInterface;
 
+    @ResponseBody
     @RequestMapping(method = RequestMethod.GET,value = "/delete/{id}")
     public void delete(@PathVariable("id")String id){
         courseServiceInterface.delete(id);
     }
 
+    @ResponseBody
     @RequestMapping(method = RequestMethod.POST,value = "/insert")
     public void insert(Course course){
         courseServiceInterface.insert(course);
     }
+
+    @ResponseBody
     @RequestMapping(method = RequestMethod.POST,value = "/update/{id}")
     public void update(@RequestParam Course course){
         courseServiceInterface.update(course);
