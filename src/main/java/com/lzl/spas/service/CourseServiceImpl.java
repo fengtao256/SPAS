@@ -1,6 +1,6 @@
 package com.lzl.spas.service;
 
-import com.lzl.spas.dao.CourseRepositoryInterface;
+import com.lzl.spas.dao.CourseRepository;
 import com.lzl.spas.entity.Course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -17,29 +17,29 @@ public class CourseServiceImpl implements CourseServiceInterface{
 
     //引入dao层声明的方法
     @Autowired
-    private CourseRepositoryInterface courseRepositoryInterface;
+    private CourseRepository courseRepository;
 
     @Override
     public void delete(String id) {
         Course course = new Course();
         course.setCourseNo(id);
-        courseRepositoryInterface.delete(course);
+        courseRepository.delete(course);
     }
 
     @Override
     public void insert(Course course) {
-        courseRepositoryInterface.save(course) ;
+        courseRepository.save(course) ;
     }
 
     @Override
     public int update(Course course) {
-        courseRepositoryInterface.save(course) ;
+        courseRepository.save(course) ;
         return 0;
     }
 
     @Override
     public Course selectById(String id) {
-        Optional<Course> optional = courseRepositoryInterface.findById(id) ;
+        Optional<Course> optional = courseRepository.findById(id) ;
         System.out.println("optional========"+optional);
         Course course = optional.get() ;
         return course;
