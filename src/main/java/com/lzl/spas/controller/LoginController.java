@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,13 +41,15 @@ public class LoginController {
         } else {  //查询用户信息
             Users user = usersServiceInterface.queryLoginInfo(usersNo);
             if (user != null && !StringUtils.isEmptyOrWhitespaceOnly(user.toString())) {
-                if ("student".equals(user.getRole())) { //查询是学生，则返回学生首页
-                    if (password.equals(user.getPassword())) {
+                        if ("student".equals(user.getRole())) { //查询是学生，则返回学生首页
+                            if (password.equals(user.getPassword())) {
                         session.setAttribute("userNo", user.getUsersNo());
                         session.setAttribute("username",user.getUserName());
                         session.setAttribute("role", user.getRole());
                         session.setMaxInactiveInterval(30 * 60);
                         retMap.putAll(ResultUtils.success());
+                        model.addAllAttributes(retMap) ;
+                        retMap.put("user",user) ;
                         model.addAllAttributes(retMap) ;
                         return "stuHomePage";
                     } else {
@@ -78,20 +81,6 @@ public class LoginController {
                 model.addAllAttributes(retMap) ;
             }
         }
-        return "login";
-    }
-
-    //登录页的位置的位置
-    @RequestMapping("/login.index")
-    public String login(Model model) {
-        model.addAttribute("titleHead", "欢迎登陆学生成绩分析系统");
-        return "login";
-    }
-
-    //实现默认跳转访问页面，添加路由为"/"
-    @RequestMapping("/")
-    public String defaultHtml(Model model) {
-        model.addAttribute("titleHead", "欢迎登陆学生成绩分析系统");
         return "login";
     }
 }

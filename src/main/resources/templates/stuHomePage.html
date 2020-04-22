@@ -5,6 +5,54 @@
     <title>学生成绩分析系统-学生端</title>
 </head>
 <body>
-    <p th:text="欢迎学生+'【'+${session.username}+'】'+登录" ></p>
+    <p th:text="欢迎学生+'【'+${session.username}+${session.userNo}+${session.role}+'】'+登录" ></p>
+    <div id="main">
+        <div class="top-head">
+            <div id="logo">logo</div>
+            <div id="title">xxx后台管理系统</div>
+            <div id="per-mes">您好，admin。欢迎您使用后台管理系统！ </div>
+        </div>
+        <div class="left-menu">
+            <!-- 侧边栏标签页 -->
+            <ul class="nav nav-stacked">
+                <!-- 侧边栏选项 -->
+                <li role="presentation" class="active">
+                    <!-- 选项控制data-target对应的显隐 -->
+                    <a href="#" data-toggle="collapse" data-target="#list">商品管理</a>
+                    <!-- 隐藏的详细菜单 -->
+                    <ul id="list" class="collapse in">
+                        <li class="active">
+                            <a href="">
+                                操作一
+                            </a>
+                        </li>
+                        <li><a href="">操作二</a></li>
+                    </ul>
+                </li>
+                <li role="presentation"><a href="#" data-toggle="collapse" data-target="#list1">Profile</a>
+                    <ul id="list1" class="collapse in">
+                        <li class="active">
+                            <a href="">
+                                操作一
+                            </a>
+                        </li>
+                        <li><a href="">操作二</a></li>
+                    </ul>
+                </li>
+                <li role="presentation"><a href="#">Messages</a></li>
+            </ul>
+        </div>
+        <div class="right-content">
+
+            <div style="margin:10px;">
+                <ol class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Library</a></li>
+                    <li class="active">Data</li>
+                </ol>
+                这里是内容
+            </div>
+        </div>
+    </div>
 </body>
 </html>

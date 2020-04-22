@@ -17,5 +17,5 @@ public class UsersServiceImpl implements UsersServiceInterface{
     public Users queryLoginInfo(String userNo) {
         Optional<Users> optional =  usersRespository.findById(userNo) ;
         return optional.get();
-    }
+}
 }
