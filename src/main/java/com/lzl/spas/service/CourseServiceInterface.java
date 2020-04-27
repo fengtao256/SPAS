@@ -3,7 +3,7 @@ package com.lzl.spas.service;
 import com.lzl.spas.entity.Course;
 import org.springframework.stereotype.Component;
 
-import java.util.Iterator;
+import java.util.List;
 
 @Component
 public interface CourseServiceInterface {
@@ -16,5 +16,5 @@ public interface CourseServiceInterface {
     /** 查询单个*/
     Course selectById(String id);
     /** 查询全部列表*/
-    Iterator<Course> selectAll(int pageNum, int pageSize);
+    List<Course> selectAll();
 }

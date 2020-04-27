@@ -10,6 +10,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 
 import java.util.Iterator;
+import java.util.List;
 import java.util.Optional;
 
 @Component
@@ -46,8 +47,8 @@ public class CourseServiceImpl implements CourseServiceInterface{
     }
 
     @Override
-    public Iterator<Course> selectAll(int pageNum, int pageSize) {
-
-        return  null;
+    public List<Course> selectAll() {
+        List<Course> courseList = courseRepository.findAll() ;
+        return  courseList;
     }
 }

@@ -15,6 +15,8 @@ public class Users {
     String role;
     @Column()
     String userName ;
+    @Column()
+    String sex ;
 
     public String getUsersNo() {
         return usersNo;
@@ -46,5 +48,13 @@ public class Users {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 }

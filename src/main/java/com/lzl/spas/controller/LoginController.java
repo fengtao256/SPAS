@@ -46,6 +46,7 @@ public class LoginController {
                         session.setAttribute("userNo", user.getUsersNo());
                         session.setAttribute("username",user.getUserName());
                         session.setAttribute("role", user.getRole());
+                        session.setAttribute("sex", user.getSex());
                         session.setMaxInactiveInterval(30 * 60);
                         retMap.putAll(ResultUtils.success());
                         model.addAllAttributes(retMap) ;
@@ -62,6 +63,7 @@ public class LoginController {
                         session.setAttribute("username",user.getUserName());
                         session.setAttribute("userNo", user.getUsersNo());
                         session.setAttribute("role", user.getRole());
+                        session.setAttribute("sex", user.getSex());
                         session.setMaxInactiveInterval(30 * 60);
                         retMap.putAll(ResultUtils.success());
                         model.addAllAttributes(retMap) ;
@@ -82,5 +84,16 @@ public class LoginController {
             }
         }
         return "login";
+    }
+    /**
+     * 登录请求处理
+     *
+     * @param session
+     * @return
+     */
+    @PostMapping("/logout")
+    public String doLoginOut(HttpSession session,Model model) {
+        session.invalidate();
+        return "/login" ;
     }
 }
