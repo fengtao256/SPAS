@@ -5,7 +5,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping()
 public class WebController {
     //登录页的位置的位置
     @RequestMapping("/login.index")
@@ -27,14 +26,15 @@ public class WebController {
         return "login";
     }
 
-    @RequestMapping("/stuHome.html")
-    public String stuHomePage(Model model) {
-        return "stuHomePage";
-    }
-
-    //实现默认跳转访问页面，添加路由为"/"
-    @RequestMapping("/teaHome.html")
+    /**
+     * 教师端首页
+     * @param model
+     * @return
+     */
+    @RequestMapping("/teaHomePage")
     public String teaHomePage(Model model) {
+        model.addAttribute("titleHead", "欢迎登陆学生成绩分析系统");
         return "teaHomePage";
     }
+
 }
