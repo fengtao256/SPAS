@@ -1,5 +1,6 @@
 package com.lzl.spas.service;
 
+import com.lzl.spas.entity.EduUsers;
 import com.lzl.spas.entity.Users;
 import org.springframework.stereotype.Component;
 
@@ -10,5 +11,5 @@ public interface UsersServiceInterface {
      * @param userNo
      * @return
      */
-    Users queryLoginInfo(String userNo) ;//方法默认修饰符是public
+    EduUsers queryLoginInfo(String userNo) ;//方法默认修饰符是public
 }

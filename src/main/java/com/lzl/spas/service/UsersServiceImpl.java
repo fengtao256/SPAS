@@ -1,6 +1,7 @@
 package com.lzl.spas.service;
 
 import com.lzl.spas.dao.UsersRespository;
+import com.lzl.spas.entity.EduUsers;
 import com.lzl.spas.entity.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -14,8 +15,8 @@ public class UsersServiceImpl implements UsersServiceInterface{
     private UsersRespository usersRespository ;
 
     @Override
-    public Users queryLoginInfo(String userNo) {
-        Optional<Users> optional =  usersRespository.findById(userNo) ;
+    public EduUsers queryLoginInfo(String userNo) {
+        Optional<EduUsers> optional =  usersRespository.findById(userNo) ;
         return optional.get();
 }
 }

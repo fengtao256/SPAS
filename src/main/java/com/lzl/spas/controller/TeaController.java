@@ -1,6 +1,7 @@
 package com.lzl.spas.controller;
 
 import com.lzl.spas.entity.Course;
+import com.lzl.spas.entity.EduCourse;
 import com.lzl.spas.entity.Teach;
 import com.lzl.spas.service.CourseServiceInterface;
 import com.lzl.spas.service.TeachServiceInterface;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class TeaController {
@@ -27,7 +29,7 @@ public class TeaController {
      */
     @RequestMapping("/teacher/couMgr/courseList")
     public String teaCourseHtml(Model model) {
-        List<Course> courseList = courseServiceInterface.selectAll() ;
+        List<EduCourse> courseList = courseServiceInterface.selectAll() ;
         model.addAttribute("courseList" , courseList) ;
         return "/teacher/couMgr/courseList";
     }
@@ -39,9 +41,11 @@ public class TeaController {
      */
     @RequestMapping("/teacher/couMgr/myCourseList")
     public String myCourseList(Model model , HttpSession session) {
-        String teacherNo = (String)session.getAttribute("userNo") ;
-        List<Teach> myCourseList = teachServiceInterface.getMyCourseList(teacherNo) ;
+        String teaNo = (String)session.getAttribute("userNo") ;
+        System.out.println("教师编号是="+teaNo);
+        List<Map<String,Object>> myCourseList = teachServiceInterface.getMyCourseList(teaNo) ;
         model.addAttribute("myCourseList" , myCourseList) ;
         return "/teacher/couMgr/myCourseList";
     }
+
 }

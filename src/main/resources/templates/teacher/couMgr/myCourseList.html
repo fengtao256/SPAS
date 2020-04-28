@@ -241,10 +241,10 @@
                                     <tr>
                                         <th>课程序号</th>
                                         <th>课程名称</th>
-                                        <th>课程学期</th>
+                                        <th>课程学分</th>
+                                        <th>课程学时</th>
                                         <th>任课教师</th>
-                                        <th>教师编号</th>
-                                        <th>操作列表</th>
+                                        <th>教学班级</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -252,9 +252,10 @@
                                         <td th:text="${list.courseNo}"></td>
                                         <!--设置题目类型结束-->
                                         <td th:text="${list.courseName}"></td>
-                                        <td th:text="第+'【'+${list.grade}+'】'+学期"></td>
-                                        <td th:text="${list.teacher}"></td>
-                                        <td th:text="${list.teacherNo}"></td>
+                                        <td th:text="${list.creditHour}"></td>
+                                        <td th:text="${list.courseHour}"></td>
+                                        <td th:text="${list.teaName}"></td>
+                                        <td th:text="${list.className}"></td>
                                         <td>
                                             <button class="btn btn-success btn-sm" type="button">新增</button>
                                             <button class="btn btn-info  btn-sm" type="button">修改</button>

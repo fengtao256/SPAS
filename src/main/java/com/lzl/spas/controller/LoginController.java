@@ -1,5 +1,6 @@
 package com.lzl.spas.controller;
 
+import com.lzl.spas.entity.EduUsers;
 import com.lzl.spas.entity.Users;
 import com.lzl.spas.service.UsersServiceInterface;
 import com.lzl.spas.utils.ResultUtils;
@@ -39,18 +40,18 @@ public class LoginController {
             retMap.putAll(ResultUtils.setResult(1001, "ERROR", "用户名密码不能为空"));
             return "login";
         } else {  //查询用户信息
-            Users user = usersServiceInterface.queryLoginInfo(usersNo);
-            if (user != null && !StringUtils.isEmptyOrWhitespaceOnly(user.toString())) {
-                        if ("student".equals(user.getRole())) { //查询是学生，则返回学生首页
-                            if (password.equals(user.getPassword())) {
-                        session.setAttribute("userNo", user.getUsersNo());
-                        session.setAttribute("username",user.getUserName());
-                        session.setAttribute("role", user.getRole());
-                        session.setAttribute("sex", user.getSex());
+            EduUsers eduUsers = usersServiceInterface.queryLoginInfo(usersNo);
+            if (eduUsers != null && !StringUtils.isEmptyOrWhitespaceOnly(eduUsers.toString())) {
+                        if ("student".equals(eduUsers.getRole())) { //查询是学生，则返回学生首页
+                            if (password.equals(eduUsers.getPassword())) {
+                        session.setAttribute("userNo", eduUsers.getUsersNo());
+                        session.setAttribute("username",eduUsers.getUserName());
+                        session.setAttribute("role", eduUsers.getRole());
+                        session.setAttribute("sex", eduUsers.getSex());
                         session.setMaxInactiveInterval(30 * 60);
                         retMap.putAll(ResultUtils.success());
                         model.addAllAttributes(retMap) ;
-                        retMap.put("user",user) ;
+                        retMap.put("eduUsers",eduUsers) ;
                         model.addAllAttributes(retMap) ;
                         return "stuHomePage";
                     } else {
@@ -58,12 +59,12 @@ public class LoginController {
                         model.addAllAttributes(retMap) ;
                         return "login";
                     }
-                } else if ("teacher".equals(user.getRole())) { //查询是教师，则返回教师首页
-                    if (password.equals(user.getPassword())) {
-                        session.setAttribute("username",user.getUserName());
-                        session.setAttribute("userNo", user.getUsersNo());
-                        session.setAttribute("role", user.getRole());
-                        session.setAttribute("sex", user.getSex());
+                } else if ("teacher".equals(eduUsers.getRole())) { //查询是教师，则返回教师首页
+                    if (password.equals(eduUsers.getPassword())) {
+                        session.setAttribute("username",eduUsers.getUserName());
+                        session.setAttribute("userNo", eduUsers.getUsersNo());
+                        session.setAttribute("role", eduUsers.getRole());
+                        session.setAttribute("sex", eduUsers.getSex());
                         session.setMaxInactiveInterval(30 * 60);
                         retMap.putAll(ResultUtils.success());
                         model.addAllAttributes(retMap) ;
