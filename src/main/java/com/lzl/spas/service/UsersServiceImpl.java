@@ -2,7 +2,6 @@ package com.lzl.spas.service;
 
 import com.lzl.spas.dao.UsersRespository;
 import com.lzl.spas.entity.EduUsers;
-import com.lzl.spas.entity.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

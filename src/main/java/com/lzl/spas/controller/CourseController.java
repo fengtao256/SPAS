@@ -1,10 +1,8 @@
 package com.lzl.spas.controller;
 
-import com.lzl.spas.entity.Course;
 import com.lzl.spas.entity.EduCourse;
 import com.lzl.spas.service.CourseServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

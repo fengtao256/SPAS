@@ -1,7 +1,6 @@
 package com.lzl.spas.service;
 
 import com.lzl.spas.dao.CourseRepository;
-import com.lzl.spas.entity.Course;
 import com.lzl.spas.entity.EduCourse;
 import org.springframework.beans.factory.annotation.Autowired;
 

@@ -1,8 +1,6 @@
 package com.lzl.spas.controller;
 
-import com.lzl.spas.entity.Course;
 import com.lzl.spas.entity.EduCourse;
-import com.lzl.spas.entity.Teach;
 import com.lzl.spas.service.CourseServiceInterface;
 import com.lzl.spas.service.TeachServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 

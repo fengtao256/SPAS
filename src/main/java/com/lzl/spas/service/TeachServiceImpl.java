@@ -1,8 +1,6 @@
 package com.lzl.spas.service;
 
 import com.lzl.spas.dao.TeachRepository;
-import com.lzl.spas.entity.EduCourse;
-import com.lzl.spas.entity.Teach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
