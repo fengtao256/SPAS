@@ -5,9 +5,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "course")
 public class Course {
-    public Course(){
-
-    }
     //主键属性
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO )//主键由程序控制
