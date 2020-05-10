@@ -37,4 +37,14 @@ public class WebController {
         return "teaHomePage";
     }
 
+    /**
+     * 学生端首页
+     * @param model
+     * @return
+     */
+    @RequestMapping("/stuHomePage")
+    public String stuHomePage(Model model) {
+        model.addAttribute("titleHead", "欢迎登陆学生成绩分析系统");
+        return "stuHomePage";
+    }
 }
