@@ -1,11 +1,11 @@
 package com.lzl.spas.service;
 
 import com.lzl.spas.dao.TeachRepository;
-import com.lzl.spas.entity.Teach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Map;
 
 @Component
 public class TeachServiceImpl implements TeachServiceInterface {
@@ -14,11 +14,12 @@ public class TeachServiceImpl implements TeachServiceInterface {
 
     /**
      * 查询我的课程
-     * @param teacherNo
+     * @param teaNo
      * @return
      */
     @Override
-    public List<Teach> getMyCourseList(String teacherNo) {
-        return teachRepository.getMyCourseList(teacherNo) ;
+    public List<Map<String,Object>> getMyCourseList(String teaNo) {
+//        return teachRepository.getMyCourseList(teaNo) ;
+        return teachRepository.getMyCourseListByTeaNo(teaNo) ;
     }
 }

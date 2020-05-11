@@ -1,9 +1,8 @@
 package com.lzl.spas.controller;
 
-import com.lzl.spas.entity.Course;
+import com.lzl.spas.entity.EduCourse;
 import com.lzl.spas.service.CourseServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -20,19 +19,19 @@ public class CourseController {
 
     @ResponseBody
     @RequestMapping(method = RequestMethod.POST,value = "/insert")
-    public void insert(Course course){
+    public void insert(EduCourse course){
         courseServiceInterface.insert(course);
     }
 
     @ResponseBody
     @RequestMapping(method = RequestMethod.POST,value = "/update/{id}")
-    public void update(@RequestParam Course course){
+    public void update(@RequestParam EduCourse course){
         courseServiceInterface.update(course);
     }
 
     @ResponseBody
     @RequestMapping(method = RequestMethod.GET,value = "/{id}/select")
-    public Course select(@PathVariable("id")String id){
+    public EduCourse select(@PathVariable("id")String id){
         System.out.println("id========="+id);
         return courseServiceInterface.selectById(id);
     }

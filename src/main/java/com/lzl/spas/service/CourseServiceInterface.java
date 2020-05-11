@@ -1,6 +1,6 @@
 package com.lzl.spas.service;
 
-import com.lzl.spas.entity.Course;
+import com.lzl.spas.entity.EduCourse;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -10,11 +10,11 @@ public interface CourseServiceInterface {
     /** 删除 */
     void delete(String id);
     /** 增加*/
-    void insert(Course user);
+    void insert(EduCourse course);
     /** 更新*/
-    int update(Course user);
+    int update(EduCourse course);
     /** 查询单个*/
-    Course selectById(String id);
+    EduCourse selectById(String id);
     /** 查询全部列表*/
-    List<Course> selectAll();
+    List<EduCourse> selectAll();
 }

@@ -1,7 +1,7 @@
 package com.lzl.spas.service;
 
 import com.lzl.spas.dao.CourseRepository;
-import com.lzl.spas.entity.Course;
+import com.lzl.spas.entity.EduCourse;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Component;
@@ -18,33 +18,33 @@ public class CourseServiceImpl implements CourseServiceInterface{
 
     @Override
     public void delete(String id) {
-        Course course = new Course();
+        EduCourse course = new EduCourse();
         course.setCourseNo(id);
         courseRepository.delete(course);
     }
 
     @Override
-    public void insert(Course course) {
+    public void insert(EduCourse course) {
         courseRepository.save(course) ;
     }
 
     @Override
-    public int update(Course course) {
+    public int update(EduCourse course) {
         courseRepository.save(course) ;
         return 0;
     }
 
     @Override
-    public Course selectById(String id) {
-        Optional<Course> optional = courseRepository.findById(id) ;
+    public EduCourse selectById(String id) {
+        Optional<EduCourse> optional = courseRepository.findById(id) ;
         System.out.println("optional========"+optional);
-        Course course = optional.get() ;
+        EduCourse course = optional.get() ;
         return course;
     }
 
     @Override
-    public List<Course> selectAll() {
-        List<Course> courseList = courseRepository.findAll() ;
+    public List<EduCourse> selectAll() {
+        List<EduCourse> courseList = courseRepository.findAll() ;
         return  courseList;
     }
 }
