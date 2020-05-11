@@ -26,7 +26,7 @@
                 <nav class="sidebar-main">
                     <ul class="nav nav-drawer">
                         <li class="nav-item active"> <a href="../../teaHomePage"><i class="mdi mdi-home"></i> 后台首页</a> </li>
-                        <li class="nav-item nav-item-has-subnav">
+                        <li class="nav-item nav-item-has-subnav open">
                             <a href="javascript:void(0)"><i class="mdi mdi-palette"></i>课程管理</a>
                             <ul class="nav nav-subnav">
                                 <li> <a href="/teacher/couMgr/courseList">课程总览</a> </li>
@@ -35,19 +35,10 @@
                             </ul>
                         </li>
                         <li class="nav-item nav-item-has-subnav">
-                            <a href="javascript:void(0)"><i class="mdi mdi-format-align-justify"></i> 班级管理</a>
+                            <a href="javascript:void(0)"><i class="mdi mdi-format-align-justify"></i> 教学班管理</a>
                             <ul class="nav nav-subnav">
-                                <li> <a href="#">班级列表</a> </li>
-                                <li> <a href="#">添加班级</a> </li>
-                                <li> <a href="#">修改班级信息</a> </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item nav-item-has-subnav">
-                            <a href="javascript:void(0)"><i class="mdi mdi-menu"></i> 学生管理</a>
-                            <ul class="nav nav-subnav">
-                                <li> <a href="#">学生列表</a> </li>
-                                <li> <a href="#">添加学生</a> </li>
-                                <li> <a href="#">修改学生信息</a> </li>
+                                <li> <a href="/teacher/classMgr/classList">班级管理</a> </li>
+                                <li> <a href="/teacher/classMgr/stuList">学生管理</a> </li>
                             </ul>
                         </li>
                         <li class="nav-item nav-item-has-subnav">
@@ -55,7 +46,6 @@
                             <ul class="nav nav-subnav">
                                 <li> <a href="#">成绩查看</a> </li>
                                 <li> <a href="#">成绩修改</a> </li>
-                                <li> <a href="#">修改学生信息</a> </li>
                             </ul>
                         </li>
                     </ul>
@@ -235,6 +225,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header"><h4>我的课程</h4></div>
+                            <div class="card-header"><button class="btn btn-success btn-sm" type="button">新增课程</button></div>
                             <div class="card-body">
                                 <table class="table table-hover">
                                     <thead>
@@ -257,7 +248,6 @@
                                         <td th:text="${list.teaName}"></td>
                                         <td th:text="${list.className}"></td>
                                         <td>
-                                            <button class="btn btn-success btn-sm" type="button">新增</button>
                                             <button class="btn btn-info  btn-sm" type="button">修改</button>
                                             <button class="btn btn-danger btn-sm" type="button" th:value="${list.courseNo}">删除</button>
                                         </td>

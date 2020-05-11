@@ -45,4 +45,17 @@ public class TeaController {
         return "/teacher/couMgr/myCourseList";
     }
 
+    /**
+     * 获取我的班级列表
+     * @param model
+     * @return
+     */
+    @RequestMapping("/teacher/couMgr/classList")
+    public String myClassList(Model model , HttpSession session) {
+        String teaNo = (String)session.getAttribute("userNo") ;
+        System.out.println("教师编号是="+teaNo);
+        List<Map<String,Object>> myCourseList = teachServiceInterface.getMyCourseList(teaNo) ;
+        model.addAttribute("myCourseList" , myCourseList) ;
+        return "/teacher/couMgr/classList";
+    }
 }

@@ -1,18 +1,14 @@
 package com.lzl.spas.dao;
 
-import com.lzl.spas.entity.EduCourse;
+import com.lzl.spas.entity.EduTeach;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 import java.util.Map;
 
-public interface TeachRepository extends JpaRepository<EduCourse, String> {
-
-    @Query(value = "select c from EduCourse c where teaNo = :teaNo ")
-    List<EduCourse> getMyCourseList(String teaNo);
-
-    //多表联查
+public interface TeachRepository extends JpaRepository<EduTeach, String> {
+    //多表联查,，获取当前教师的授课信息
     @Query(value = "SELECT\n" +
             "\tc.course_no as courseNo,\n" +
             "\tc.course_name as courseName,\n" +
