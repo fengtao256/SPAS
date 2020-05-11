@@ -1,6 +1,8 @@
 package com.lzl.spas.controller;
 
+import com.lzl.spas.entity.EduClass;
 import com.lzl.spas.entity.EduCourse;
+import com.lzl.spas.service.ClassServiceInterface;
 import com.lzl.spas.service.CourseServiceInterface;
 import com.lzl.spas.service.TeachServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,8 @@ public class TeaController {
     private CourseServiceInterface courseServiceInterface;
     @Autowired
     private TeachServiceInterface teachServiceInterface;
+    @Autowired
+    private ClassServiceInterface classServiceInterface;
     /**
      * 获取全部课程
      * @param model
@@ -50,12 +54,12 @@ public class TeaController {
      * @param model
      * @return
      */
-    @RequestMapping("/teacher/couMgr/classList")
+    @RequestMapping("/teacher/classMgr/classList")
     public String myClassList(Model model , HttpSession session) {
         String teaNo = (String)session.getAttribute("userNo") ;
         System.out.println("教师编号是="+teaNo);
-        List<Map<String,Object>> myCourseList = teachServiceInterface.getMyCourseList(teaNo) ;
-        model.addAttribute("myCourseList" , myCourseList) ;
-        return "/teacher/couMgr/classList";
+        List<EduClass> myClassList = classServiceInterface.getMyClassList(teaNo) ;
+        model.addAttribute("myClassList" , myClassList) ;
+        return "/teacher/classMgr/classList";
     }
 }

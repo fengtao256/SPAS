@@ -17,6 +17,8 @@ public class EduClass {
     String grade ;
     @Column
     String institude ;
+    @Column
+    String teaNo ;
 
     public String getClassNo() {
         return classNo;
@@ -56,5 +58,13 @@ public class EduClass {
 
     public void setInstitude(String institude) {
         this.institude = institude;
+    }
+
+    public String getTeaNo() {
+        return teaNo;
+    }
+
+    public void setTeaNo(String teaNo) {
+        this.teaNo = teaNo;
     }
 }

@@ -38,7 +38,7 @@ public class LoginController {
         } else {  //查询用户信息
             EduUsers eduUsers = usersServiceInterface.queryLoginInfo(usersNo);
             if (eduUsers != null && !StringUtils.isEmptyOrWhitespaceOnly(eduUsers.toString())) {
-                        if ("student".equals(eduUsers.getRole())) { //查询是学生，则返回学生首页
+                        if ("student".equals(eduUsers.getRole())||"学生".equals(eduUsers.getRole())) { //查询是学生，则返回学生首页
                             if (password.equals(eduUsers.getPassword())) {
                         session.setAttribute("userNo", eduUsers.getUsersNo());
                         session.setAttribute("username",eduUsers.getUserName());
@@ -55,7 +55,7 @@ public class LoginController {
                         model.addAllAttributes(retMap) ;
                         return "login";
                     }
-                } else if ("teacher".equals(eduUsers.getRole())) { //查询是教师，则返回教师首页
+                } else if ("teacher".equals(eduUsers.getRole())||"任课教师".equals(eduUsers.getRole())) { //查询是教师，则返回教师首页
                     if (password.equals(eduUsers.getPassword())) {
                         session.setAttribute("username",eduUsers.getUserName());
                         session.setAttribute("userNo", eduUsers.getUsersNo());
