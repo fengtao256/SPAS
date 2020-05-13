@@ -9,4 +9,5 @@ import java.util.Map;
 @Component
 public interface TeachServiceInterface {
     List<Map<String,Object>> getMyCourseList(String teaNo) ;
+
 }
