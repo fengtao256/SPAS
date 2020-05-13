@@ -30,23 +30,13 @@
                                 <ul class="nav nav-subnav">
                                     <li> <a href="/teacher/couMgr/courseList">课程总览</a> </li>
                                     <li> <a href="/teacher/couMgr/myCourseList">我的课程</a> </li>
-                                    <li> <a href="#">课程-班级管理</a> </li>
                                 </ul>
                             </li>
                             <li class="nav-item nav-item-has-subnav">
                                 <a href="javascript:void(0)"><i class="mdi mdi-format-align-justify"></i> 班级管理</a>
                                 <ul class="nav nav-subnav">
-                                    <li> <a href="#">班级列表</a> </li>
-                                    <li> <a href="#">添加班级</a> </li>
-                                    <li> <a href="#">修改班级信息</a> </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item nav-item-has-subnav">
-                                <a href="javascript:void(0)"><i class="mdi mdi-menu"></i> 学生管理</a>
-                                <ul class="nav nav-subnav">
-                                    <li> <a href="#">学生列表</a> </li>
-                                    <li> <a href="#">添加学生</a> </li>
-                                    <li> <a href="#">修改学生信息</a> </li>
+                                    <li> <a href="/teacher/classMgr/classList">教学班管理</a> </li>
+                                    <li> <a href="/teacher/classMgr/stuList">学生管理</a> </li>
                                 </ul>
                             </li>
                             <li class="nav-item nav-item-has-subnav">
@@ -54,7 +44,6 @@
                                 <ul class="nav nav-subnav">
                                     <li> <a href="#">成绩查看</a> </li>
                                     <li> <a href="#">成绩修改</a> </li>
-                                    <li> <a href="#">修改学生信息</a> </li>
                                 </ul>
                             </li>
 <!--                            <li class="nav-item nav-item-has-subnav">-->
@@ -268,7 +257,7 @@
                                 <div class="card-body">
                                     <p>教师姓名:<a th:text="${session.username}" th></a></p>
                                     <p>教师编号:<a th:text="${session.userNo}"></a></p>
-                                    <p>职&emsp;&emsp;务:<a th:text="任课教师"></a></p>
+                                    <p>职&emsp;&emsp;务:<a th:text="${session.role}"></a></p>
                                     <p>性&emsp;&emsp;别:<a th:text="${session.sex}"></a></p>
                                 </div>
                             </div>
