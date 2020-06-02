@@ -1,11 +1,9 @@
 package com.lzl.spas.service;
-
 import com.lzl.spas.dao.ClassRepository;
-import com.lzl.spas.entity.EduClass;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
+import java.util.Map;
 
 @Component
 public class ClassServiceImpl implements ClassServiceInterface {
@@ -14,7 +12,7 @@ public class ClassServiceImpl implements ClassServiceInterface {
     private ClassRepository classRepository ;
 
     @Override
-    public List<EduClass> getMyClassList(String teaNo) {
-        return classRepository.findByTeaNo(teaNo);
+    public List<Map<String,Object>> getMyClass(String studentNo) {
+        return classRepository.getMyClassByStuNo(studentNo);
     }
 }

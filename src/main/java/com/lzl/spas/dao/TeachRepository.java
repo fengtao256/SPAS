@@ -9,9 +9,6 @@ import java.util.Map;
 
 public interface TeachRepository extends JpaRepository<EduCourse, String> {
 
-//    @Query(value = "select c from EduCourse c where teaNo = :teaNo ")
-//    List<EduCourse> getMyCourseList(String teaNo);
-
     //多表联查
     @Query(value = "SELECT\n" +
             "\tc.course_no as courseNo,\n" +

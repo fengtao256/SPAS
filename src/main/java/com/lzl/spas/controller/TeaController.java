@@ -26,7 +26,7 @@ public class TeaController {
      */
     @RequestMapping("/teacher/couMgr/courseList")
     public String teaCourseHtml(Model model) {
-        List<EduCourse> courseList = courseServiceInterface.selectAll() ;
+        List<Map<String, Object>> courseList = courseServiceInterface.getCourseList() ;
         model.addAttribute("courseList" , courseList) ;
         return "/teacher/couMgr/courseList";
     }
@@ -45,4 +45,17 @@ public class TeaController {
         return "/teacher/couMgr/myCourseList";
     }
 
+    /**
+     * 获取我的教学班级
+     * @param model
+     * @return
+     */
+    @RequestMapping("/teacher/classMgr/classList")
+    public String myClassList(Model model , HttpSession session) {
+        String teaNo = (String)session.getAttribute("userNo") ;
+        System.out.println("教师编号是="+teaNo);
+        List<Map<String,Object>> myClassList = teachServiceInterface.getMyClassList(teaNo) ;
+        model.addAttribute("myClassList" , myClassList) ;
+        return "/teacher/classMgr/classList";
+    }
 }

@@ -28,9 +28,9 @@ public class LoginController {
      * @param session
      * @return
      */
-    @PostMapping("/login")
+    @PostMapping("/login")  //处理post请求     //@RequestParam主要用于将请求参数区域的数据映射到控制层方法的参数上
     public String doLogin(@RequestParam("usersNo") String usersNo, @RequestParam("password") String password, HttpSession session,Model model) {
-        Map<String, Object> retMap = new HashMap<String, Object>();
+        Map<String, Object> retMap = new HashMap<String, Object>();//创建retMap对象 Object是所有类型的父类
         //非空判断
         if (StringUtils.isEmptyOrWhitespaceOnly(usersNo) || StringUtils.isEmptyOrWhitespaceOnly(password)) {
             retMap.putAll(ResultUtils.setResult(1001, "ERROR", "用户名密码不能为空"));

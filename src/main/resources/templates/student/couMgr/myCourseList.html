@@ -26,7 +26,7 @@
                 <nav class="sidebar-main">
                     <ul class="nav nav-drawer">
                         <li class="nav-item active"> <a href="../../stuHomePage"><i class="mdi mdi-home"></i> 后台首页</a> </li>
-                        <li class="nav-item nav-item-has-subnav">
+                        <li class="nav-item nav-item-has-subnav open">
                             <a href="javascript:void(0)"><i class="mdi mdi-palette"></i>课程管理</a>
                             <ul class="nav nav-subnav">
                                 <li> <a href="/student/couMgr/courseList">课程总览</a> </li>
@@ -37,23 +37,17 @@
                         <li class="nav-item nav-item-has-subnav">
                             <a href="javascript:void(0)"><i class="mdi mdi-format-align-justify"></i> 班级管理</a>
                             <ul class="nav nav-subnav">
-                                <li> <a href="#">班级列表</a> </li>
-                                <li> <a href="#">我的班级</a> </li>
+
+                                <li> <a href="/student/classMgr/myClass">我的班级</a> </li>
 
                             </ul>
                         </li>
-                        <li class="nav-item nav-item-has-subnav">
-                            <a href="javascript:void(0)"><i class="mdi mdi-menu"></i> 个人管理</a>
-                            <ul class="nav nav-subnav">
 
-                                <li> <a href="#">修改个人信息</a> </li>
-                            </ul>
-                        </li>
                         <li class="nav-item nav-item-has-subnav">
                             <a href="javascript:void(0)"><i class="mdi mdi-menu"></i> 成绩管理</a>
                             <ul class="nav nav-subnav">
                                 <li> <a href="#">查看单科成绩</a> </li>
-                                <li> <a href="#">查看所有成绩</a> </li>
+                                <li> <a href="/student/scoreMgr/scoreList">查看所有成绩</a> </li>
                                 <li> <a href="#">成绩分析</a> </li>
                             </ul>
                         </li>
@@ -228,50 +222,44 @@
         </header>
         <!--End 头部信息-->
         <main class="lyear-layout-content">
-<!--            <div class="container-fluid">-->
-
-<!--                <div class="row">-->
-<!--                    <div class="col-lg-12">-->
-<!--                        <div class="card">-->
-<!--                            <div class="card-header"><h4>我的课程</h4></div>-->
-<!--                            <div class="card-body">-->
-<!--                                <table class="table table-hover">-->
-<!--                                    <thead>-->
-<!--                                    <tr>-->
-<!--                                        <th>课程序号</th>-->
-<!--                                        <th>课程名称</th>-->
-<!--                                        <th>课程学分</th>-->
-<!--                                        <th>课程学时</th>-->
-<!--                                        <th>任课教师</th>-->
-<!--                                        <th>教学班级</th>-->
-<!--                                    </tr>-->
-<!--                                    </thead>-->
-<!--                                    <tbody>-->
-<!--                                    <tr th:each="list:${myCourseList}">-->
-<!--                                        <td th:text="${list.courseNo}"></td>-->
-<!--                                        &lt;!&ndash;设置题目类型结束&ndash;&gt;-->
-<!--                                        <td th:text="${list.courseName}"></td>-->
-<!--                                        <td th:text="${list.creditHour}"></td>-->
-<!--                                        <td th:text="${list.courseHour}"></td>-->
-<!--                                        <td th:text="${list.teaName}"></td>-->
-<!--                                        <td th:text="${list.className}"></td>-->
-<!--                                        <td>-->
-<!--                                            <button class="btn btn-success btn-sm" type="button">新增</button>-->
-<!--                                            <button class="btn btn-info  btn-sm" type="button">修改</button>-->
-<!--                                            <button class="btn btn-danger btn-sm" type="button" th:value="${list.courseNo}">删除</button>-->
-<!--                                        </td>-->
-<!--                                    </tr>-->
-<!--                                    </tbody>-->
-<!--                                </table>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--            </div>-->
             <div class="container-fluid">
-                <p th:text="${test}"></p>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header"><h4>我的课程</h4></div>
+                            <div class="card-body">
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>课程序号</th>
+                                        <th>课程名称</th>
+                                        <th>课程学分</th>
+                                        <th>课程学时</th>
+                                        <th>任课教师</th>
+
+                                    <tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr th:each="list:${myCourseList}">
+                                        <td th:text="${list.courseNo}"></td>
+                                        <!--设置题目类型结束-->
+                                        <td th:text="${list.courseName}"></td>
+                                        <td th:text="${list.creditHour}"></td>
+                                        <td th:text="${list.courseHour}"></td>
+                                        <td th:text="${list.teaName}"></td>
+
+
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+
         </main>
         <!--页面主要内容-->
         <!--End 页面主要内容-->

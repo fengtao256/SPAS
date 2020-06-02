@@ -10,4 +10,6 @@ import java.util.Map;
 public interface TeachServiceInterface {
     List<Map<String,Object>> getMyCourseList(String teaNo) ;
 
+    List<Map<String,Object>> getMyClassList(String teaNo) ;
+
 }
